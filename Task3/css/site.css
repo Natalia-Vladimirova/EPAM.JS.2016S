@@ -1,0 +1,65 @@
+html,body {
+	height: 100%;
+}
+
+body {
+	background: #C0C0C0;
+	margin: 0;
+}
+
+.container {
+	background: white;
+	width: 1000px;
+	margin: auto;
+	min-height: 100%;
+}
+
+.field-container {
+	display: inline-block;
+	float: left;
+	width: 80%;
+}
+
+.field {
+	border: 2px solid black;
+	min-height: 300px;
+	width: 728px;
+	margin: 10px auto;
+}
+
+.field .cell {
+	float: left;
+	border: 1px solid #EEE9E9;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.buttons {
+	display: inline-block;
+	width: 20%;
+	padding-top: 10px;
+}
+
+.buttons button {
+	display: block;
+	width: 90%;
+	margin: auto;
+	font-family: cursive;
+	font-size: 16px;
+	cursor: pointer;
+	background: #C0C0C0;
+	border: none;
+	margin-bottom: 5px;
+	padding: 3px;
+}
+
+.buttons button:disabled {
+	cursor: default;
+}
+
+.clearfix {
+	clear: left;
+}
