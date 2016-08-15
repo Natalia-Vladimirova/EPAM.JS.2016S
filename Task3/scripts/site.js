@@ -25,13 +25,13 @@ $(function() {
 		var value = $element.text();
 
 		if (value > 75) {
-			$element.css('background-color', '#f44336');
+			$element.addClass('red');
 		}
 		else if (value > 50) {
-			$element.css('background-color', '#ff9800');
+			$element.addClass('orange');
 		}
 		else if (value > 25) {
-			$element.css('background-color', '#4caf50');
+			$element.addClass('green');
 		}
 	}
 

@@ -37,6 +37,18 @@ body {
 	vertical-align: middle;
 }
 
+.field .cell.red {
+	background-color: #f44336;
+}
+
+.field .cell.orange {
+	background-color: #ff9800;
+}
+
+.field .cell.green {
+	background-color: #4caf50;
+}
+
 .buttons {
 	display: inline-block;
 	width: 20%;
