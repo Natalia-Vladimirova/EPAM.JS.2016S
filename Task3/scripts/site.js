@@ -21,23 +21,23 @@ $(function() {
 		}
 	}
 
-	function setCellColor(element) {
-		var value = $(element).text();
+	function setCellColor($element) {
+		var value = $element.text();
 
 		if (value > 75) {
-			$(element).css('background-color', '#f44336');
+			$element.css('background-color', '#f44336');
 		}
 		else if (value > 50) {
-			$(element).css('background-color', '#ff9800');
+			$element.css('background-color', '#ff9800');
 		}
 		else if (value > 25) {
-			$(element).css('background-color', '#4caf50');
+			$element.css('background-color', '#4caf50');
 		}
 	}
 
 	function setFieldColor() {
 		$('#field .cell').each(function() {
-			setCellColor(this);
+			setCellColor($(this));
 		});
 	}
 
