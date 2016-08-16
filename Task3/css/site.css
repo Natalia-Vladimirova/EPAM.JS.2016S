@@ -55,12 +55,13 @@ body {
 	padding-top: 10px;
 }
 
-.buttons button {
-	display: block;
-	width: 90%;
+.buttons .button {
+	width: 87%;
+	height: 25px;
 	margin: auto;
 	font-family: cursive;
 	font-size: 16px;
+	text-align: center;
 	cursor: pointer;
 	background: #C0C0C0;
 	border: none;
@@ -68,8 +69,10 @@ body {
 	padding: 3px;
 }
 
-.buttons button:disabled {
+.buttons .button.disabled {
 	cursor: default;
+	pointer-events: none;
+    color: gray;
 }
 
 .clearfix {

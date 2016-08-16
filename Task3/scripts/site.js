@@ -6,9 +6,9 @@ $(function() {
 	disableButtons(false, true, true);
 
 	function disableButtons(generate, setColor, reset) {
-		$('#generate').attr('disabled', generate);
-		$('#setColor').attr('disabled', setColor);
-		$('#reset').attr('disabled', reset);
+		generate ? $('#generate').addClass('disabled') : $('#generate').removeClass('disabled');
+		setColor ? $('#setColor').addClass('disabled') : $('#setColor').removeClass('disabled');
+		reset ? $('#reset').addClass('disabled') : $('#reset').removeClass('disabled');
 	}
 
 	function generateField() {
