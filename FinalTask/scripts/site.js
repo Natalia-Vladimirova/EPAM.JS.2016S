@@ -26,12 +26,6 @@ $(function() {
 
 	$('#resourceField').on('click', 'div:not(.bomb)', function() {
 		var $this = $(this);
-		var id = $this.attr('id');
-
-		if (id === undefined) {
-			return;
-		}
-
 		$this.removeClass('resource');
 		var resourceClass = $this.attr('class');
 		updateResourceCount($('#' + resourceClass + 'Count'), 1);
@@ -43,25 +37,25 @@ $(function() {
 		
 		currentGameId = setInterval(
 			showResource, 
-			500, 
+			700, 
 			getRandomResourceName, 
 			cleanResource, 
-			700);
+			1000);
 
 		currentBombId = setInterval(
 			showResource, 
-			5000, 
+			7000, 
 			function() { return 'bomb'; }, 
 			detonateBomb, 
-			2000);
+			3000);
 	}
 
 	function startGame() {
 		$('#resourceField div:not(.bomb)').each(function() {
-			updateTimeout(cleanResource, 700, $(this));
+			updateTimeout(cleanResource, 1000, $(this));
 		});
 		$('#resourceField div.bomb').each(function() {
-			updateTimeout(detonateBomb, 2000, $(this));
+			updateTimeout(detonateBomb, 3000, $(this));
 		});
 	}
 
@@ -89,20 +83,18 @@ $(function() {
 	}
 
 	function generateResource(resourceClass) {
-		var $div = $('<div>').addClass('resource').addClass(resourceClass);
-		setCoordinates($div);
-		$('#resourceField').append($div);
-		$div.animate({ opacity: 1 }, 400);
-		return $div;
+		var $resource = $('<div>').addClass('resource').addClass(resourceClass);
+		placeResourceOnField($resource);
+		return $resource;
 	}
 
-	function setCoordinates($element) {
+	function placeResourceOnField($element) {
 		var $field = $('#resourceField');
-		var fieldWidth = $field.width();
-		var fieldHeight = $field.height();
-		var top = random(0, fieldHeight - $element.height());
-		var left = random(0, fieldWidth - $element.width());
+		$field.append($element);
+		var top = random(0, $field.height() - $element.height());
+		var left = random(0, $field.width() - $element.width());
 		$element.css({ top: top, left: left, opacity: 0 });
+		$element.animate({ opacity: 1 }, 500);
 	}
 
 	function getRandomResourceName() {
