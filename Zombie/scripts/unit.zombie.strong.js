@@ -8,6 +8,10 @@ unit.zombie.strong = function(line) {
 		}
 	}
 
+	this.allHealth = 70;
+	this.leftHealth = this.allHealth;
+	this.speed = 2;
+
 	var baseDie = this.die;
 
 	this.die = function() {

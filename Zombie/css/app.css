@@ -40,14 +40,34 @@ body {
 	cursor: pointer; 
 	text-align: center; 
 }
-.button#btnGenerate { 
-	background-color: #ff9800; 
+.button#btnPlayGame { 
+	background-color: #4EEE94; 
+}
+.button#btnSlowUp {
+	background-color: #ADFF2F;
+}
+.button#btnGrowOld {
+	background-color: #FF9800;
+}
+.button#btnExplode {
+	background-color: #FF6347;
 }
 
 .zombie { 
 	position: absolute; 
 	top: 0; 
 	right: 0; 
+}
+.zombie .health {
+	height: 5px;
+	width: 80%;
+	margin: 1px 10% auto 10%;
+	background: #FFFACD;
+}
+.zombie .health .left {
+	height: 100%;
+	width: 100%;
+	background: #B22222;
 }
 .zombie.michael { 
 	width: 46px; 
